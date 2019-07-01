@@ -7,11 +7,32 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+<style type='text/css'>
+  body, td {
+    font-family: Minion;
+  }
+</style>
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Big Header
+## Small Header
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+* an asterisk starts an unordered list
+* and this is another item in the list
++ or you can also use the + character
+- or the - character
+
+To start an ordered list, write this:
+
+1. this starts a list *with* numbers
+2. this will show as number '2.'
+33. a wrong number here still shows as number '3.'
+#. the '#' continues the list and shows as number '4.'
+9. any number or '#' will keep the list going.
+    * just indent by 4 spaces (or tab) to make a sub-list
+        1. keep indenting for more sub lists
+    * here i'm back to the second level
+
+Here are some nice emoji: `r emo::ji('cold_sweat')` `r emo::ji('flushed')` `r emo::ji('scream')`
 
 ```{r cars}
 summary(cars)
@@ -26,3 +47,8 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+**Picture (with caption):**
+
+![Unige Banner](https://www.unige.ch/communication/files/1614/8890/7268/logo.jpg)
+
