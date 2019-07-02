@@ -77,7 +77,9 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 **Picture (with caption):**
 
 ![Unige Banner](https://www.unige.ch/communication/files/1614/8890/7268/logo.jpg)
-## Group Members
+
+
+# Group Members
 
 ### Olga Sironi
 
@@ -114,3 +116,5 @@ hist(X)
 ```
 
 $$A=\pi r^2$$
+
+<span style="color:red">“Vérité dans un temps, erreur dans un autre.”, Charles de Montesquieu</span> 
