@@ -83,6 +83,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 I am a Master's student
 
+
 My favorite hobby is horseriding.
 
 I used to love fishing with my brother and our little boat and an interesting fact is that one day we were followed by a shark and we managed to make it go away. From that day I stopped go fishing and I quite lost my interest in the seaside.
@@ -117,6 +118,11 @@ I used to love fishing with my brother and our little boat and an interesting fa
 +---------------+---------------+
 
 # Markdown Syntax
+```{r}
+n=1000
+X=rnorm(n)
+boxplot(X)
+```
 
 ```{r}
 n=1000
