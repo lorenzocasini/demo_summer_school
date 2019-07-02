@@ -1,5 +1,4 @@
 ---
-title: "exercise"
 author: "Lorenzo Casini"
 date: "02/07/2019"
 output: 
