@@ -1,6 +1,6 @@
 ---
-title: "exercise"
-author: "Lorenzo Casini"
+title: "Homework1"
+author: "Lorenzo Casini, Olga Sironi"
 date: "02/07/2019"
 output: 
   html_document:
@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
   }
 </style>
 
-# Introduzione
+
 ## Lorenzo Casini
 
 ```{r} 
