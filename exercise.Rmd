@@ -1,0 +1,116 @@
+---
+title: "exercise"
+author: "Lorenzo Casini"
+date: "02/07/2019"
+output: 
+  html_document:
+      theme: cerulean
+      highlight: tango
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<style type='text/css'>
+  body, td {
+    font-family: Minion;
+  }
+</style>
+
+# Introduction
+## Lorenzo Casini
+
+```{r} 
+(today <- Sys.Date())
+```
+
+### “Introduction” 
+A short summary of the structure of your homework. 
+(Moreover, record a short video to introduce your group and include it in your R Markdown document.)
+
+### "Group Members"
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/b70mr98xo48" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
++---------------+---------------+
+| 1st semester  | 2nd semester  | 
++===============+===============+
+| *course 1*    |  *course 3*   | 
+|               |               |
++---------------+---------------+
+| *course 2*    |  *course 4*   |
+|               |               |      
++---------------+---------------+
+
+
+* an asterisk starts an unordered list
+* and this is another item in the list
++ or you can also use the + character
+- or the - character
+
+To start an ordered list, write this:
+
+1. this starts a list *with* numbers
+2. this will show as number '2.'
+33. a wrong number here still shows as number '3.'
+#. the '#' continues the list and shows as number '4.'
+9. any number or '#' will keep the list going.
+    * just indent by 4 spaces (or tab) to make a sub-list
+        1. keep indenting for more sub lists
+    * here i'm back to the second level
+
+Here are some nice emoji: `r emo::ji('cold_sweat')` `r emo::ji('flushed')` `r emo::ji('scream')`
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+**Picture (with caption):**
+
+![Unige Banner](https://www.unige.ch/communication/files/1614/8890/7268/logo.jpg)
+## Group Members
+
+### Olga Sironi
+
+I am a Master's student
+
+My favorite hobby is horseriding.
+
+I used to love fishing with my brother and our little boat and an interesting fact is that one day we were followed by a shark and we managed to make it go away. From that day I stopped go fishing and I quite lost my interest in the seaside.
+
+>  "Questo è il bene dell'essere dimezzato: il capire d'ogni persona e cosa al mondo la pena che ognuno e ognuna ha per la propria incompletezza." 
+
+### Lorenzo Casini
+
+> '''this is not my quote, and *neither is this*.''
+
+**webpage** [Lorenzo Casini](https://www.lorenzocasini.weebly.com)
+
++---------------+---------------+
+| 1st semester  | 2nd semester  | 
++===============+===============+
+| *course 1*    |  *course 3*   | 
+|               |               |
++---------------+---------------+
+| *course 2*    |  *course 4*   |
+|               |               |      
++---------------+---------------+
+
+# Markdown Syntax
+
+```{r}
+n=1000
+X=rnorm(n)
+hist(X)
+```
+
+$$A=\pi r^2$$
