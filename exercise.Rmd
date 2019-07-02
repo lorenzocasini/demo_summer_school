@@ -89,6 +89,17 @@ I used to love fishing with my brother and our little boat and an interesting fa
 
 >  "Questo è il bene dell'essere dimezzato: il capire d'ogni persona e cosa al mondo la pena che ognuno e ognuna ha per la propria incompletezza." 
 
++---------------+---------------+
+| 1st semester  | 2nd semester  | 
++===============+===============+
+| *course 1*    |  *course 3*   | 
+|               |               |
++---------------+---------------+
+| *course 2*    |  *course 4*   |
+|               |               |      
++---------------+---------------+
+
+
 ### Lorenzo Casini
 
 > '''this is not my quote, and *neither is this*.''
