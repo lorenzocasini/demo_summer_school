@@ -18,8 +18,6 @@ knitr::opts_chunk$set(echo = TRUE)
 </style>
 
 
-## Lorenzo Casini
-
 ```{r} 
 (today <- Sys.Date())
 ```
@@ -31,15 +29,6 @@ A short summary of the structure of your homework.
 ### "Group Members"
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/b70mr98xo48" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-+---------------+---------------+
-| 1st semester  | 2nd semester  | 
-+===============+===============+
-| *course 1*    |  *course 3*   | 
-|               |               |
-+---------------+---------------+
-| *course 2*    |  *course 4*   |
-|               |               |      
-+---------------+---------------+
 
 
 * an asterisk starts an unordered list
@@ -74,11 +63,6 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-**Picture (with caption):**
-
-![Unige Banner](https://www.unige.ch/communication/files/1614/8890/7268/logo.jpg)
-
-
 # Group Members
 
 ### Olga Sironi
@@ -103,6 +87,11 @@ I used to love fishing with my brother and our little boat and an interesting fa
 +---------------+---------------+
 
 
+**Picture (with caption):**
+
+![USI Banner](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/USI_Logo.svg/150px-USI_Logo.svg.png)
+
+
 ### Lorenzo Casini
 
 > '''this is not my quote, and *neither is this*.''
@@ -118,6 +107,11 @@ I used to love fishing with my brother and our little boat and an interesting fa
 | *course 2*    |  *course 4*   |
 |               |               |      
 +---------------+---------------+
+
+**Picture (with caption):**
+
+![Unige Banner](https://www.unige.ch/communication/files/1614/8890/7268/logo.jpg)
+
 
 # Markdown Syntax
 ```{r}
