@@ -1,0 +1,26 @@
+---
+title: "fizzbuzz"
+author: "Lorenzo Casini"
+date: "02/07/2019"
+output: html_document
+---
+
+```{r}
+i=1
+for(i in 1:100){
+if(i%%3==0 & !i%%5==0){print("fizz")} 
+else if(i%%5==0 & !i%%3==0){print("buzz")} 
+else if(i%%3==0 & i%%5==0){print("fizzbuzz")}
+else{print(i)}
+}
+```
+
+```{r}
+for (i in 1:100) {
+ if (i %% 3 == 0 & i %% 5 == 0) {print("FizzBuzz")}
+ else if (i %% 3 == 0) {print("Fizz")}
+ else if (i %% 5 == 0) {print("Buzz")}
+ else print(i)
+}
+```
+
