@@ -1,0 +1,129 @@
+---
+title: "3/07"
+output: html_document
+---
+
+## The Bootstrap
+
+
+```{r }
+student_work <- c(0, 0, 0, 0, 0, 0.25, 0.75, 0.75, 1, 1.25, 6)
+mean_hour <- mean(student_work)
+alpha <- 0.05
+n <- length(student_work)
+sd_hour <- sd(student_work)
+z <- qnorm(1 - alpha/2)
+mean_hour + c(-1, 1)*z*sd_hour/sqrt(n)
+```
+
+```{r}
+student_work <- c(0, 0, 0, 0, 0, 0.25, 0.75, 0.75, 1, 1.25, 6)
+n = length(student_work)
+mean(student_work[sample(1:n, replace = TRUE)])
+mean(student_work)
+```
+
+```{r}
+student_work <- c(0, 0, 0, 0, 0, 0.25, 0.75, 0.75, 1, 1.25, 6)
+n = length(student_work)
+B = 1000
+n = length(student_work)
+bootstrap_mean = rep(NA, B)
+
+for (i in 1:B){
+mean_bootstrap[i] = 
+mean(student_work[sample(1:n, replace = TRUE)])
+}
+
+quantile(mean_bootstrap, probs = c(0.025, 0.975))
+```
+
+```{r}
+student_work <- c(0, 0, 0, 0, 0, 0.25, 0.75, 0.75, 1, 1.25, 6)
+n = length(student_work)
+B = 1000
+n = length(student_work)
+bootstrap_mean = rep(NA, B)
+
+for (i in 1:B){
+mean_bootstrap[i] = 
+median(student_work[sample(1:n, replace = TRUE)])
+}
+
+quantile(mean_bootstrap, probs = c(0.025, 0.975))
+```
+
+
+```{r}
+student_work <- c(0, 0, 0, 0, 0, 0.25, 0.75, 0.75, 1, 1.25, 6)
+n = length(student_work)
+B = 1000
+n = length(student_work)
+bootstrap_mean = rep(NA, B)
+
+for (i in 1:B){
+mean_bootstrap[i] = 
+sd(student_work[sample(1:n, replace = TRUE)])
+}
+
+quantile(mean_bootstrap, probs = c(0.025, 0.975))
+```
+```{r}
+myfunction = "exp(x)"
+mc_int(x_range = c(1,3), fun = "exp(x)", B = 1000)
+```
+
+```{r}
+myfunction = "cos(x)"
+mc_int(x_range = c(1,2), fun = "cos(x)", B = 1000)
+```
+
+
+```{r}
+a = 0
+b = 2
+B = 1000
+
+(b -a) * (runif(1, a, b))^2
+```
+
+```{r}
+a = 0
+b = 2
+B = 1000
+inter = 0
+for (i in 1:B){
+  inter = inter * (runif(1, a, b))^2
+}
+(b -a)*inter/b
+```
+
+```{r}
+a = 0
+b = 2
+B = 1000
+
+runif(1, a, b)
+```
+
+```{r}
+a = 0
+B = 10^5
+b = 2
+mean(runif(B,a,b))
+```
+
+```{r}
+myfunction = "log(x)"
+mc_int(x_range = c(1,3), fun = "log(x)", B = 1000)
+```
+
+```{r}
+myfunction = "sin(x)/x"
+mc_int(x_range = c(1,4), fun = "sin(x)/x", B = 100000)
+```
+
+```{r}
+myfunction = "x"
+mc_int(x_range = c(1,2), fun = "x", B = 1000)
+```
