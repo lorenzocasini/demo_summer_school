@@ -4,10 +4,6 @@ author: Olga Sironi
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ## R Functions
 object: everything is an object
 functions: everything that is happening in R is the result of a function call.
@@ -27,4 +23,239 @@ Function principles:
 
 The value of a function call is uniquely defined by the value of the argument.
 
-The effect of a function call is simply the returned value
+The effect of a function call is simply the returned value.
+
+
+```{r}
+runif(10)
+```
+It's different in this case. They are random number generating functions.
+```{r}
+runif(10)
+```
+
+It's important to look at the anatomy of the function in Ch. 6.1:
+name, arguments, body and returned value.
+
+R returns automatically the last thing evaluated.
+
+## Creating functions
+Write a function that adds 2 numbers together
+
+```{r}
+add <- function(a,b){
+  a + b
+}
+add (1,2)
+```
+
+
+```{r}
+add <- function(a,b){
+  if (a==1) return(b)
+}
+add (1,2)
+```
+
+```{r}
+add <- function(a,b){
+  if (a==1) return(b)
+  a + b
+}
+
+addb <- function(a, b=1){
+  a + b
+}
+addb(1)
+```
+
+
+```{r}
+add <- function(a,b){
+  if (a==1) return(b)
+  a + b
+}
+
+addb <- function(a, b=1){
+  a + b
+}
+addb(1,2)
+```
+
+# The lazy rule
+Any timke you repeat something more than 2 times, consider the use of functions.
+
+```{r}
+df <- data.frame(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10)
+) 
+df$a <- (df$a -min(df$a))/max(df$a - min(df$a))
+
+df$a
+```
+
+```{r}
+df <- data.frame(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10)
+) 
+df$a <- (df$a -min(df$a))/max(df$a - min(df$a))
+df$b <- (df$b -min(df$b))/max(df$b - min(df$b))
+df$c <- (df$c -min(df$c))/max(df$c - min(df$c))
+
+df
+```
+
+```{r}
+set.seed(123)
+df <- data.frame(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10)
+) 
+df$a <- (df$a -min(df$a))/max(df$a - min(df$a))
+df$b <- (df$b -min(df$b))/max(df$b - min(df$b))
+df$c <- (df$c -min(df$c))/max(df$c - min(df$c))
+
+df
+rescale <- function(x){
+  (x-min(x))/(max(x)-min(x))
+  
+}
+```
+
+
+```{r}
+set.seed(123)
+df <- data.frame(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10)
+) 
+df$a <- (df$a -min(df$a))/max(df$a - min(df$a))
+df$b <- (df$b -min(df$b))/max(df$b - min(df$b))
+df$c <- (df$c -min(df$c))/max(df$c - min(df$c))
+
+rescale <- function(x){
+  (x-min(x))/(max(x)-min(x))
+  
+}
+
+df$a <- rescale(df$a)
+df$b <- rescale(df$b)
+df$c <- rescale(df$c)
+
+apply(df,2,rescale)
+```
+
+```{r}
+set.seed(123)
+df <- data.frame(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10)
+) 
+df$a <- (df$a -min(df$a))/max(df$a - min(df$a))
+df$b <- (df$b -min(df$b))/max(df$b - min(df$b))
+df$c <- (df$c -min(df$c))/max(df$c - min(df$c))
+
+rescale <- function(x){
+  (x-min(x))/(max(x)-min(x))
+  
+}
+
+df$a <- rescale(df$a)
+df$b <- rescale(df$b)
+df$c <- rescale(df$c)
+
+df_rescaled <- apply(df,2, rescale)
+df_rescaled
+```
+
+## Environments
+
+It controls how R finds the value associated with a name.
+
+R creates a call environment and within the arguments it does something in the value. So for instanve we have a=2 and B=2 and a+b=4. Around this environment, there's the global environment. If R tries to add a+b and doesn't have a value for them in the call environment, it will have a look in the global environment for a value associated in the name, without returning any error. If it cannot find a value here, it finds them in the parent environment.
+
+```{r}
+add <- function(a){
+  a + h
+}
+h <- 2
+add(3)
+
+```
+
+## Generic functions
+
+R is an object-oriented programming language, but not like Java or C++, that have an encapsulated OOP.
+It has functional-oriented object language.
+This means that a method has different behaviors depending on the class of the object.
+
+```{r}
+letters  <- factor (sample(letters[1:4], 10, replace = T))
+numbers <- rnorm(10)
+letters <- base::letters
+letters
+```
+
+```{r}
+let  <- factor (sample(letters[1:4], 10, replace = T))
+num <- rnorm(10)
+let
+```
+```{r}
+num 
+```
+
+The function behaves differently depending on the class of the objects.
+
+```{r}
+class(num )
+```
+
+For generic functions, R looks at the first argument.
+
+```{r}
+let  <- factor (sample(letters[1:4], 10, replace = T))
+num <- rnorm(10)
+class(let)
+print.default(let)
+
+as.numeric(let)
+```
+
+```{r}
+plot(let)
+```
+```{r}
+plot(num)
+```
+
+It depends on the class of the elements.
+
+## Exercise
+Create a function that plots an image of a matrix
+
+```{r}
+a <- matrix(rnorm(100), 10, 10)
+plot(a)
+image(a)
+```
+
+To have this result by writing plot I add class and define function for it.
+
+```{r}
+a <- matrix(rnorm(100), 10, 10)
+plot(a)
+image(a)
+
+plot.matrix <- function(x){
+  image(x)
+}
+plot(a)
+```
