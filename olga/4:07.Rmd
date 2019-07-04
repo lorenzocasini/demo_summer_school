@@ -1,0 +1,30 @@
+---
+title: "4/07"
+author: Olga Sironi
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Functions
+object: everything is an object
+functions: everything that is happening in R is the result of a function call.
+
+```{r}
+n <- 100
+u <-runif(n)
+n
+```
+
+```{r}
+?runif
+```
+
+## Functions
+Function principles:
+
+The value of a function call is uniquely defined by the value of the argument.
+
+The effect of a function call is simply the returned value
