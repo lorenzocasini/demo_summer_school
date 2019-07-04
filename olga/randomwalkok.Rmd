@@ -4,6 +4,40 @@ author: "Lorenzo Casini"
 date: "03/07/2019"
 output: html_document
 ---
+
+#Problem 1 Fizz Buzz
+
+```{r}
+i=1
+for(i in 1:100){
+if(i%%3==0 & !i%%5==0){print("fizz")} 
+else if(i%%5==0 & !i%%3==0){print("buzz")} 
+else if(i%%3==0 & i%%5==0){print("fizzbuzz")}
+else{print(i)}
+}
+```
+
+```{r}
+for (i in 1:100) {
+ if (i %% 3 == 0 & i %% 5 == 0) {print("FizzBuzz")}
+ else if (i %% 3 == 0) {print("Fizz")}
+ else if (i %% 5 == 0) {print("Buzz")}
+ else print(i)
+}
+```
+
+#Problem 2 map
+
+```{r}
+install.packages("ggmap")
+```
+
+```{r}
+library(ggmap)
+```
+`
+#Problem 3 Random Walk
+
 ```{r}
 library(plot3D)
 
@@ -57,3 +91,5 @@ scatter3D(D[1:10^4,1], D[1:10^4,2], D[1:10^4,3], xlab = "", ylab = "", zlab = ""
 points3D(0,0,0, col = "#f8766d", add = TRUE, colkey = FALSE, pch = 20, cex = 1.5)
 points3D(26,-44,26, col = "#00bfc4", add = TRUE, colkey = FALSE, pch = 20, cex = 1.5)
 ```
+
+# Problem 4 Portfolio
